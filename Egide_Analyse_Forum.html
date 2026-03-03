@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egide — Analyse & Perspectives 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#03080a;--surface:#080f12;--surface2:#0d1a20;--border:#122030;--accent:#22d3ee;--green:#34d399;--orange:#fb923c;--warn:#fbbf24;--danger:#f87171;--purple:#c084fc;--text:#b8cfd8;--heading:#e0f0f8;--muted:#1e4050}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;font-size:14.5px;line-height:1.7;padding:28px 18px 60px}
+.wrap{max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#070f14,#091520);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:14px;padding:26px 28px 22px;margin-bottom:24px;position:relative;overflow:hidden}
+.hero::before{content:'🎯';position:absolute;right:28px;top:50%;transform:translateY(-50%);font-size:80px;opacity:.05;pointer-events:none}
+.badge{display:inline-flex;align-items:center;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.28);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:22px;font-weight:900;color:var(--heading);line-height:1.25;margin-bottom:10px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
+.alert{border-radius:12px;padding:16px 20px;margin-bottom:14px}
+.ag{background:rgba(52,211,153,.07);border:1px solid rgba(52,211,153,.28)}
+.ag .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.ag p{color:#a7f3d0;font-size:13.5px;margin-bottom:5px}
+.aw{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.28)}
+.aw .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--warn);margin-bottom:8px}
+.aw p{color:#fde68a;font-size:13.5px;margin-bottom:5px}
+.alert p:last-child{margin-bottom:0}
+strong{color:var(--heading);font-weight:700}
+.slbl{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.slbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.kg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-bottom:28px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.kl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.kv{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;color:var(--heading);margin-bottom:3px}
+.kd{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700}
+.kd.up{color:var(--green)}.kd.warn{color:var(--warn)}.kd.bl{color:var(--accent)}.kd.red{color:var(--danger)}.kd.ora{color:var(--orange)}
+.ks{font-size:10.5px;color:var(--muted);margin-top:2px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:12px}
+.card h3{font-size:14.5px;font-weight:700;color:var(--heading);margin-bottom:11px;display:flex;align-items:center;gap:9px}
+.ic{width:26px;height:26px;border-radius:6px;background:rgba(34,211,238,.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.card p{color:#7899a8;margin-bottom:9px;font-size:14px}
+.card p:last-child{margin-bottom:0}
+.hl{color:var(--green);font-weight:600}.hlb{color:var(--accent);font-weight:600}.hlw{color:var(--warn);font-weight:600}.hlr{color:var(--danger);font-weight:600}.hlp{color:var(--purple);font-weight:600}.hlo{color:var(--orange);font-weight:600}
+.dt{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+.dt th{text-align:left;padding:8px 10px;background:var(--surface2);color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.dt td{padding:8px 10px;border-bottom:1px solid var(--border);color:#7899a8}
+.dt tr:last-child td{border-bottom:none}
+.dt td:first-child{color:var(--heading);font-weight:600}
+.dt td.g{color:var(--green);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.b{color:var(--accent);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.w{color:var(--warn);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.r{color:var(--danger);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.o{color:var(--orange);font-family:'JetBrains Mono',monospace;font-weight:700}
+.ul{list-style:none;padding:0}
+.ul li{padding:4px 0 4px 20px;position:relative;color:#7899a8;font-size:14px}
+.ul li::before{content:'→';position:absolute;left:0;color:var(--green);font-weight:700}
+.ul li.risk::before{content:'⚠';color:var(--danger);font-size:11px;top:6px}
+.ul li.neu::before{content:'◆';color:var(--accent);font-size:9px;top:7px}
+.frow{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
+.frow:last-child{border-bottom:none}
+.flvl{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);width:68px}
+.fprice{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--heading);width:72px}
+.fbar{flex:1;height:4px;background:var(--surface2);border-radius:2px;overflow:hidden}
+.fbar-fill{height:100%;border-radius:2px}
+.ftag{width:120px;text-align:right}
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700}
+.tg{background:rgba(52,211,153,.12);color:var(--green)}
+.tb{background:rgba(34,211,238,.12);color:var(--accent)}
+.tw{background:rgba(251,191,36,.12);color:var(--warn)}
+.tr{background:rgba(248,113,113,.12);color:var(--danger)}
+.tp{background:rgba(192,132,252,.12);color:var(--purple)}
+.to{background:rgba(251,146,60,.12);color:var(--orange)}
+.tl{position:relative;padding-left:20px}
+.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border)}
+.tli{position:relative;padding-bottom:16px}
+.tli:last-child{padding-bottom:0}
+.tld{position:absolute;left:-18px;top:5px;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
+.tld.g{border-color:var(--green)}.tld.w{border-color:var(--warn)}.tld.r{border-color:var(--danger)}.tld.o{border-color:var(--orange)}
+.tldate{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:600;margin-bottom:2px}
+.tllbl{font-size:13.5px;color:var(--heading);font-weight:600}
+.tldesc{font-size:12.5px;color:var(--muted);margin-top:2px}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+@media(max-width:600px){.pg{grid-template-columns:1fr}}
+.pc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
+.pc .hz{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.pc h4{font-size:13px;color:var(--heading);margin-bottom:6px}
+.pc ul{list-style:none;padding:0}
+.pc ul li{font-size:12.5px;color:var(--muted);padding:3px 0 3px 12px;position:relative}
+.pc ul li::before{content:'·';position:absolute;left:0;font-weight:900;font-size:16px;top:-1px}
+.verdict{background:linear-gradient(135deg,rgba(34,211,238,.05),rgba(52,211,153,.04));border:1px solid rgba(34,211,238,.2);border-radius:12px;padding:22px}
+.verdict .vt{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.verdict p{color:#7899a8;margin-bottom:9px;font-size:14px}
+.verdict p:last-child{margin-bottom:0}
+.conclu{font-size:14.5px;font-weight:600;color:var(--heading);border-top:1px solid var(--border);padding-top:13px;margin-top:13px}
+.gap{height:26px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="badge">🛡️ Analyse Forum · ALGID · Euronext Growth · PEA-PME</div>
+  <h1>Egide — Analyse Fondamentale &amp; Technique<br>+ Perspectives CT / MT / LT</h1>
+  <div class="hero-meta">
+    <span>📅 03 mars 2026</span>
+    <span>💶 Cours ~1,270 € (+23,90%)</span>
+    <span>🔒 Boîtiers hermétiques · Défense · Optronique</span>
+    <span>⚠️ NPC — pas un conseil en investissement</span>
+  </div>
+</div>
+
+<div class="alert ag">
+  <div class="at">🚀 +23,9% sur la séance — le marché redécouvre Egide dans un contexte de réarmement</div>
+  <p><strong>Le contexte géopolitique (réarmement européen massif, tensions US-Russie-Ukraine, enveloppes de défense en forte hausse) propulse les valeurs de défense de toutes capitalisations.</strong> Egide est le seul acteur mondial dédié aux boîtiers hermétiques pour composants électroniques critiques — radars, détecteurs infrarouges, imagerie thermique, systèmes de mise à feu. Le titre sort d'une longue phase de compression pour tenter de s'installer sur un nouveau palier.</p>
+</div>
+
+<div class="alert aw">
+  <div class="at">⚠️ Consensus analyste officiellement obsolète — un seul broker publié à 0,52 € (vs cours 1,27 €)</div>
+  <p><strong>La dernière note publiée sur le site d'Egide date de juillet 2025, avec une recommandation "Neutre" et un objectif de 0,52 €</strong> — soit 2,5 fois sous le cours actuel. Ce consensus est manifestement périmé et ne reflète pas la réalité du re-rating en cours. Il n'existe à ce jour aucune note mise à jour post-rally intégrant le contexte défense 2026. Point de vigilance important à communiquer sur le forum.</p>
+</div>
+
+<div class="slbl">Chiffres clés — CA 2025 (publié 26 jan. 2026)</div>
+<div class="kg">
+  <div class="kpi"><div class="kl">CA 2025 groupe</div><div class="kv">31,34 M€</div><div class="kd up">▲ +4% vs 2024</div><div class="ks">30,01 M€ en 2024</div></div>
+  <div class="kpi"><div class="kl">Egide SA (France)</div><div class="kv">+12%</div><div class="kd up">▲ accélération</div><div class="ks">imagerie thermique + optronique</div></div>
+  <div class="kpi"><div class="kl">Egide USA</div><div class="kv">10,75 M€</div><div class="kd up">▲ +29% vs 2024</div><div class="ks">vs 8,30 M€ — batteries thermi.</div></div>
+  <div class="kpi"><div class="kl">Europe</div><div class="kv">+30%</div><div class="kd up">▲ reconquête réussie</div><div class="ks">clients historiques défense/optro</div></div>
+  <div class="kpi"><div class="kl">Imagerie Thermique</div><div class="kv">45% CA</div><div class="kd bl">moteur principal</div><div class="ks">leadership mondial confirmé</div></div>
+  <div class="kpi"><div class="kl">EBITDA S1 2025</div><div class="kv">positif ✓</div><div class="kd up">▲ 1er EBITDA+ récent</div><div class="ks">vs -0,49 M€ EBITDA 2024</div></div>
+</div>
+
+<div class="gap"></div>
+<div class="slbl">Présentation — qui est Egide ?</div>
+<div class="card">
+  <h3><span class="ic">🔒</span> Le seul acteur mondial dédié aux boîtiers hermétiques pour électronique critique</h3>
+  <p>Fondée en 1986 à Bollène, <strong>Egide est le seul groupe au monde spécialisé exclusivement dans les boîtiers hermétiques et les solutions de dissipation thermique pour composants électroniques sensibles</strong>. Ces boîtiers assurent l'invulnérabilité de systèmes électroniques en environnements extrêmes (thermiques, atmosphériques, vibratoires, électromagnétiques). Une barrière technologique quasi-infranchissable construite sur 40 ans.</p>
+  <table class="dt">
+    <tr><th>Segment</th><th>Applications</th><th>Position</th></tr>
+    <tr><td>Imagerie Thermique</td><td style="color:#7899a8;font-size:12px">Détecteurs IR, caméras thermiques militaires</td><td class="g">Leader mondial ✓</td></tr>
+    <tr><td>Optronique / Hyperfréquence</td><td style="color:#7899a8;font-size:12px">Radars, modules optoélectroniques, lasers</td><td class="b">Acteur clé ✓</td></tr>
+    <tr><td>Batteries thermiques & Mise à feu</td><td style="color:#7899a8;font-size:12px">Systèmes pyrotechniques militaires, munitions</td><td class="o">Croissance rapide +</td></tr>
+    <tr><td>Boîtiers de puissance</td><td style="color:#7899a8;font-size:12px">Semi-conducteurs, aérospatial civil</td><td style="color:#7899a8;font-size:12px">Segment secondaire</td></tr>
+  </table>
+  <p style="margin-top:8px">La société est présente industriellement en <strong>France (Bollène)</strong> et aux <strong>États-Unis (Egide USA + Santier)</strong>. Cette double présence Franco-Américaine est stratégiquement précieuse dans un contexte de protectionnisme croissant et de demande de souveraineté industrielle dans la défense.</p>
+</div>
+
+<div class="gap"></div>
+<div class="slbl">Analyse fondamentale — moteurs &amp; enjeux</div>
+
+<div class="card">
+  <h3><span class="ic">🛡️</span> 1. Le vent en poupe — réarmement européen &amp; hausse budgets défense</h3>
+  <p>Le contexte géopolitique 2025-2026 est le plus favorable de l'histoire moderne pour les équipementiers de défense. Les budgets militaires européens augmentent massivement (objectif OTAN 2% PIB respecté ou dépassé, certains pays visant 3-4%). Or <strong>Egide est directement exposé à la chaîne d'approvisionnement des systèmes d'armes les plus critiques</strong> :</p>
+  <ul class="ul">
+    <li>Chaque <span class="hl">détecteur infrarouge</span> dans un missile, un drone ou un système de surveillance nécessite un boîtier hermétique Egide</li>
+    <li>Chaque <span class="hlb">système radar</span> embarqué comporte des composants hyperfréquence dans des boîtiers hermétiques</li>
+    <li>Les <span class="hlo">batteries thermiques et dispositifs de mise à feu</span> (munitions, missiles) constituent un segment à forte croissance chez Egide USA (+29% en 2025)</li>
+    <li class="neu">La <span class="hlp">production locale US</span> (Egide USA + Santier) bénéficie des politiques protectionnistes de l'administration américaine</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3><span class="ic">🔄</span> 2. Transformation 2025 — nouveau DG &amp; recentrage stratégique</h3>
+  <p>Le <strong>1er août 2025, Ignace Dupon a pris la direction générale</strong> du groupe (succédant à David Hien). Ce n'est pas un inconnu : il dirigeait Egide USA et Santier depuis 2023-2024 et connaît les deux continents de l'intérieur. Sa feuille de route est claire :</p>
+  <table class="dt">
+    <tr><th>Initiative</th><th>Détail</th><th>Impact</th></tr>
+    <tr><td>Recentrage segments à forte VA</td><td style="color:#7899a8;font-size:12px">Priorité imagerie thermique, optronique, batteries thermiques</td><td class="g">Marge + , mix favorable</td></tr>
+    <tr><td>Réduction segments volatils</td><td style="color:#7899a8;font-size:12px">Désengagement des lignes à faible contribution</td><td class="g">EBITDA + dès S1 2025</td></tr>
+    <tr><td>Synergies France / USA</td><td style="color:#7899a8;font-size:12px">Complémentarité Bollène / Virginia / Colorado</td><td class="b">Compétitivité et qualité</td></tr>
+    <tr><td>Nouveau CA renouvelé (sept. 2025)</td><td style="color:#7899a8;font-size:12px">Philippe Bensussan, Président — gouvernance renforcée</td><td class="b">Crédibilité institutionnelle</td></tr>
+  </table>
+  <p style="margin-top:8px"><strong>Résultat visible dès 2025 :</strong> EBITDA positif au S1 2025 pour la première fois depuis plusieurs années, Europe +30%, Egide USA +29%. La transformation opère.</p>
+</div>
+
+<div class="card">
+  <h3><span class="ic">⚡</span> 3. Le point de vigilance — Santier &amp; résultats annuels complets attendus</h3>
+  <p>La filiale <strong>Santier</strong> (Colorado, USA) a subi une chute de -35% au S1 2025 suite à l'arrêt de programmes à forte valeur ajoutée avec des clients américains et asiatiques. Ce point négatif a pesé sur la rentabilité groupe au S1 2025, générant une perte nette consolidée de <span class="hlr">-2,04 M€</span> (vs -1,45 M€ un an avant).</p>
+  <p>Les <strong>résultats annuels complets 2025</strong> (avec compte de résultat, bilan, cash-flow) n'ont pas encore été publiés à la date de cette analyse. La publication du CA 2025 du 26 janvier 2026 confirme le retour à la croissance et un mix amélioré, mais on attend les résultats H2 2025 et la rentabilité annuelle pour valider pleinement la thèse. <span class="hlw">Calendrier à surveiller.</span></p>
+</div>
+
+<div class="gap"></div>
+<div class="slbl">Calendrier — jalons clés</div>
+<div class="card">
+  <h3><span class="ic">📌</span> Roadmap 2025-2026</h3>
+  <div class="tl">
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">1ER AOÛT 2025 ✅</div>
+      <div class="tllbl">Nouveau DG — Ignace Dupon <span class="tag tg">GOUVERNANCE</span></div>
+      <div class="tldesc">Ex-GM Egide USA et Santier. Connaissance des deux continents. Recentrage stratégique immédiat sur segments haute valeur ajoutée.</div>
+    </div>
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">10 SEPT. 2025 ✅</div>
+      <div class="tllbl">AGM — nouveau Conseil d'administration <span class="tag tg">VALIDÉ</span></div>
+      <div class="tldesc">Philippe Bensussan, Président. Gouvernance profondément renouvelée. Signal positif de crédibilité institutionnelle.</div>
+    </div>
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">26 JAN. 2026 ✅</div>
+      <div class="tllbl">CA 2025 — 31,34 M€ (+4%) <span class="tag tg">PUBLIÉ</span></div>
+      <div class="tldesc">Imagerie thermique 45% du CA, Europe +30%, Egide USA +29%. Confirmation de l'accélération sur les segments défense stratégiques.</div>
+    </div>
+    <div class="tli">
+      <div class="tld w"></div>
+      <div class="tldate">À VENIR — PRINTEMPS 2026</div>
+      <div class="tllbl">Résultats annuels complets 2025 (compte de résultat, bilan) <span class="tag tw">ATTENDU</span></div>
+      <div class="tldesc">Publication du rapport financier annuel 2025. Donnera la rentabilité annuelle et la situation de trésorerie exacte. Catalyseur potentiel si confirmation de la profitabilité.</div>
+    </div>
+    <div class="tli">
+      <div class="tld"></div>
+      <div class="tldate">2026</div>
+      <div class="tllbl">Montée en puissance budgets défense européens <span class="tag tp">CATALYSEUR MACRO</span></div>
+      <div class="tldesc">Commandes défense en forte hausse en France, Allemagne, UK, Pologne. Egide est dans la chaîne critique de tous les systèmes d'armes modernes.</div>
+    </div>
+  </div>
+</div>
+
+<div class="gap"></div>
+<div class="slbl">Analyse technique — Graphique 1 semaine au 03/03/2026</div>
+<div class="card">
+  <h3><span class="ic">📈</span> Cours 1,270 € · RSI 67,59 · MACD +0,113 · Breakout technique majeur</h3>
+  <p>Le graphique hebdomadaire montre un titre qui a évolué entre <strong>0,35 € et 0,65 €</strong> pendant plus de 2 ans avant d'exploser à la hausse en janvier-mars 2026 dans un contexte de réarmement européen. Le cours à <strong>1,270 €</strong> a franchi des résistances horizontales majeures de très long terme et teste des niveaux non vus depuis 2022-2023.</p>
+
+  <div style="margin:14px 0">
+    <div class="frow"><div class="flvl">Support 3</div><div class="fprice" style="color:#1e4050">0,546 €</div><div class="fbar"><div class="fbar-fill" style="width:8%;background:#1e4050"></div></div><span class="ftag"><span class="tag" style="background:rgba(30,64,80,.3);color:#2d6080">plancher</span></span></div>
+    <div class="frow"><div class="flvl">Support 2</div><div class="fprice" style="color:#475569">0,773 €</div><div class="fbar"><div class="fbar-fill" style="width:22%;background:#475569"></div></div><span class="ftag"><span class="tag tw">S2</span></span></div>
+    <div class="frow"><div class="flvl">Support 1</div><div class="fprice">1,060 €</div><div class="fbar"><div class="fbar-fill" style="width:50%;background:var(--green)"></div></div><span class="ftag"><span class="tag tg">S1 clé</span></span></div>
+    <div class="frow" style="background:rgba(34,211,238,.04);border-radius:6px;padding:7px 4px"><div class="flvl" style="color:var(--accent)">COURS</div><div class="fprice" style="color:var(--accent)">1,270 €</div><div class="fbar"><div class="fbar-fill" style="width:65%;background:var(--accent)"></div></div><span class="ftag"><span class="tag tb">cours actuel</span></span></div>
+    <div class="frow"><div class="flvl">Résist. 1</div><div class="fprice">1,355 €</div><div class="fbar"><div class="fbar-fill" style="width:78%;background:var(--warn)"></div></div><span class="ftag"><span class="tag tw">R1 proche</span></span></div>
+    <div class="frow"><div class="flvl">Résist. 2</div><div class="fprice">1,400 €</div><div class="fbar"><div class="fbar-fill" style="width:85%;background:var(--orange)"></div></div><span class="ftag"><span class="tag to">R2</span></span></div>
+    <div class="frow"><div class="flvl">Objectif</div><div class="fprice">1,800 €</div><div class="fbar"><div class="fbar-fill" style="width:100%;background:var(--purple)"></div></div><span class="ftag"><span class="tag tp">LT extension</span></span></div>
+  </div>
+
+  <div style="background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);border-radius:8px;padding:14px 16px;margin:12px 0">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--warn);margin-bottom:8px">⚠️ RSI hebdo 67,59 — zone de surchauffe à surveiller · MACD +0,113 haussier</div>
+    <p style="color:#fde68a;margin-bottom:6px;font-size:13.5px">Le RSI (14) hebdomadaire à <strong style="color:#fefce8">67,59</strong> approche la zone de surchauffe (70+) sans y être encore. Le MACD Zéro Lag à <strong style="color:#fefce8">+0,113</strong> est clairement haussier. Après un move de +23,9% en une seule séance, une consolidation ou un pullback technique à court terme est naturel et sain — ce n'est pas un signal de retournement.</p>
+    <p style="color:#fde68a;margin-bottom:0;font-size:13.5px">Support clé à défendre : <strong style="color:#fefce8">1,060 €</strong> (ancien niveau de résistance devenu support). Tant que ce niveau tient, la structure haussière est intacte. Un franchissement de <strong style="color:#fefce8">1,355-1,400 €</strong> en clôture hebdo ouvrirait la voie vers des extensions significatives.</p>
+  </div>
+
+  <p>Le breakout depuis la zone de compression 0,40-0,65 € s'est fait sur des <span class="hlb">volumes nettement supérieurs à la moyenne</span> (3,04 M sur la séance vs une faible liquidité habituelle) — signe d'un intérêt institutionnel, pas seulement du détail. Les small caps défense bénéficient actuellement d'un vrai thème sectoriel porteur.</p>
+</div>
+
+<div class="gap"></div>
+<div class="slbl">Consensus analystes — situation particulière à expliquer</div>
+<div class="card">
+  <h3><span class="ic">📊</span> 1 analyste connu · "Neutre" · 0,52 € — note manifestement obsolète (×2,5 sous le cours)</h3>
+  <p>La situation du consensus sur Egide est atypique et mérite d'être expliquée clairement sur le forum pour éviter toute confusion :</p>
+  <table class="dt">
+    <tr><th>Analyste</th><th>Date note</th><th>Objectif</th><th>Reco</th><th>Statut</th></tr>
+    <tr><td>Broker (site Egide)</td><td class="w">juil. 2025</td><td class="r">0,52 €</td><td style="color:#7899a8">Neutre</td><td class="r">OBSOLÈTE ×2,5</td></tr>
+    <tr><td>Broker (site Egide)</td><td class="w">mars 2025</td><td class="r">0,58 €</td><td style="color:#7899a8">Neutre</td><td class="r">OBSOLÈTE ×2,2</td></tr>
+    <tr><td>Broker (site Egide)</td><td class="w">jan. 2025</td><td class="r">0,50 €</td><td style="color:#7899a8">Neutre</td><td class="r">OBSOLÈTE</td></tr>
+  </table>
+
+  <div style="background:rgba(192,132,252,.07);border:1px solid rgba(192,132,252,.25);border-radius:8px;padding:14px 16px;margin:14px 0">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);margin-bottom:8px">💡 Pourquoi le consensus est "faux" ici — et c'est une opportunité</div>
+    <p style="color:#e9d5ff;margin-bottom:6px;font-size:13.5px">Les objectifs de cours à 0,50-0,58 € ont été établis <strong style="color:#faf5ff">avant le réarmement européen, avant la nomination d'Ignace Dupon, avant les résultats 2025 montrant Europe +30% et Egide USA +29%.</strong> Ils ne reflètent absolument pas la dynamique actuelle.</p>
+    <p style="color:#e9d5ff;margin-bottom:0;font-size:13.5px">Sur les small caps défense en forte accélération, <strong style="color:#faf5ff">le re-rating boursier précède souvent la révision des objectifs analytiques de plusieurs mois</strong>. C'est le marché qui fait office de "consensus" ici. La vraie question n'est pas "l'objectif analyste" mais "à quel multiple valorise-t-on Egide si la rentabilité annuelle se confirme en 2026 ?"</p>
+  </div>
+
+  <p>À cours de <strong>1,270 €</strong> et avec un capital d'environ <strong>~22 M d'actions</strong>, la capitalisation boursière d'Egide est de l'ordre de <span class="hl">~28 M€</span>. Avec un CA 2025 de 31,34 M€ en croissance, le titre se traite à environ <span class="hlw">0,9× le CA</span> — une valorisation encore modeste si la rentabilité se confirme en 2025 puis s'améliore en 2026.</p>
+</div>
+
+<div class="gap"></div>
+<div class="slbl">Perspectives CT / MT / LT</div>
+<div class="pg">
+  <div class="pc">
+    <div class="hz" style="color:var(--warn)">🕐 CT · 0-3 mois</div>
+    <h4>Catalyseurs</h4>
+    <ul>
+      <li>Résultats annuels 2025 complets</li>
+      <li>Nouvelles commandes défense européennes</li>
+      <li>Continuation thème réarmement EU</li>
+      <li>Momentum technique post-breakout</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--warn)">Risques CT</h4>
+    <ul>
+      <li>RSI 67 → prise de profit possible</li>
+      <li>Faible liquidité → forte volatilité</li>
+      <li>Santier toujours en difficulté</li>
+      <li>Résultats 2025 décevants si publiés</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--green)">📅 MT · 3-12 mois</div>
+    <h4>Moteurs</h4>
+    <ul>
+      <li>Commandes défense en accélération</li>
+      <li>Imagerie thermique 45% CA → 55%?</li>
+      <li>Batteries thermiques EU : boom munitions</li>
+      <li>Synergies France-USA Ignace Dupon</li>
+      <li>Retour à EBITDA positif annuel</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--warn)">Risques MT</h4>
+    <ul>
+      <li>Redressement Santier lent</li>
+      <li>Dépendance commandes gouvernementales</li>
+      <li>Pression sur chaîne d'approvisionnement</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--purple)">🔭 LT · 12 mois+</div>
+    <h4>Thèse haussière</h4>
+    <ul>
+      <li>Seul acteur mondial dédié → pricing power</li>
+      <li>40 ans de barrières technologiques</li>
+      <li>Budgets défense structurellement hauts 2026-2035</li>
+      <li>Nouvelles applications (drones, cyber-défense)</li>
+      <li>Cible potentielle pour un grand groupe</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--danger)">Risques LT</h4>
+    <ul>
+      <li>Émergence d'un concurrent technologique</li>
+      <li>Réduction budgets défense si paix durable</li>
+      <li>Taille critique insuffisante pour grands marchés</li>
+    </ul>
+  </div>
+</div>
+
+<div class="gap"></div>
+<div class="slbl">Mon avis personnel</div>
+<div class="verdict">
+  <div class="vt">💬 Verdict</div>
+  <p>Egide est un dossier que le marché a <strong>oublié pendant 3 ans</strong> alors que la société se transformait en silence : nouveau management, recentrage sur l'imagerie thermique et la défense, synergies France-USA, premier EBITDA positif. Le réveil de +23,9% en une séance n'est pas un accident — c'est la rencontre d'une thèse fondamentale solide avec un catalyseur macro exceptionnel (réarmement européen).</p>
+  <p>Ce qui me convainc fondamentalement :</p>
+  <ul class="ul" style="margin:8px 0">
+    <li>La position de <span class="hl">seul acteur mondial dédié</span> aux boîtiers hermétiques est un moat réel, construit sur 40 ans et quasi-impossible à répliquer rapidement</li>
+    <li>L'<span class="hlb">imagerie thermique (45% du CA)</span> est directement au cœur de tous les systèmes d'armes modernes — missiles, drones, surveillance, lutte anti-drones</li>
+    <li>La <span class="hlo">double présence France + USA</span> est précieuse dans un contexte de souveraineté industrielle défense</li>
+    <li>À <span class="hlw">~28 M€ de capitalisation pour 31 M€ de CA</span> en croissance, la valorisation reste modeste si la rentabilité 2025 se confirme</li>
+  </ul>
+  <p><strong>Le risque principal à court terme :</strong> le RSI à 67,59 et une séance à +23,9% appellent naturellement à une phase de consolidation. Entrer après un tel mouvement demande de la patience — attendre un retour vers <strong>1,060 € (support S1)</strong> ou la formation d'une base à ces niveaux est une approche plus prudente qu'un achat en cours de séance post-gap.</p>
+  <div class="conclu">
+    🎯 <strong>Conviction MT/LT forte sur la thèse, prudence CT sur le timing d'entrée.</strong> <span style="color:var(--warn);font-weight:600">Support clé : 1,060 €. Résistances : 1,355 € → 1,400 €. Catalyseur court terme : résultats annuels 2025 complets. Catalyseur macro : commandes défense européennes 2026-2027.</span>
+  </div>
+</div>
+
+<div style="margin-top:20px;padding:12px;background:var(--surface);border-radius:8px;font-size:11.5px;color:var(--muted);text-align:center;border:1px solid var(--border)">
+  Sources : Communiqués Egide (CA 2025 du 26/01/2026, Résultats S1 2025 du 20/10/2025, CA S1 2025 du 30/07/2025), GlobeNewswire, site Egide Group · Analyse personnelle non professionnelle · Ne constitue pas un conseil en investissement · DYOR
+</div>
+
+</div>
+</body>
+</html>
